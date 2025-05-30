@@ -11,8 +11,10 @@ env:
 jobs:
   check-var:
     runs-on: ubuntu-latest
+    env: 
+      MESSAGE : Hello
     steps:
       - name: "It's Firday"
-        run: echo "Today is Firday!"
-        env:
-          First_Name: GithubActions
+        run: echo "$MESSAGE, Today is Firday!"
+#        env:
+#          First_Name: GithubActions

@@ -1,0 +1,18 @@
+### github-action-variable-01.yml
+
+name: Test Github Actions variable 01
+
+on:
+  push
+
+env:
+  DAY_OF_WEEK: Firday
+
+jobs:
+  check-var:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "It's Firday"
+        run: echo "Today is Firday!"
+        env:
+          First_Name: GithubActions

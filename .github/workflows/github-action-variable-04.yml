@@ -3,7 +3,7 @@
 name: Test Github Actions variable-04
 run-name: Run Github Actions inputs, outputs, needs
 on:
-  workflow_dispatch
+  workflow_dispatch:
     inputs:
       name:
         description: '이름'

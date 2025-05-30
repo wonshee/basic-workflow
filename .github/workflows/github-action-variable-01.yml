@@ -14,7 +14,31 @@ jobs:
     env: 
       MESSAGE : Hello
     steps:
-      - name: "It's Firday"
-        run: echo "$MESSAGE, Today is Firday!"
+      - name: "It's Day!"
+        if: ${{ env.DAY_OF_WEEK == 'Thursday' }}
+        run: echo "$MESSAGE, Today is $DAY_OF_WEEK!!"
 #        env:
 #          First_Name: GithubActions
+
+  check-var2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "It's Day!"
+        run: echo "$MESSAGE, Today is $DAY_OF_WEEK!!"
+
+#반복문
+  check-var3:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fruits: [Apple, Banana, Kiwi]
+    steps:
+      - name: "It's fruits!"
+        run: echo "Hello, ${{ matrix.fruits }}"
+        #병렬로 처리됨
+
+
+
+
+
+        

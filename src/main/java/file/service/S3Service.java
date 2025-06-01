@@ -41,12 +41,13 @@ public class S3Service {
 	public void uploadS3File(MultipartFile file) throws Exception {
 		
 		// D:/CE/97.data/s3_data에 파일 저장 -> S3 전송 및 저장 (putObject)
+		// ubuntu 기준에서 //home//ubuntu//s3_data// 으로
 		if(file == null) {
 			throw new Exception("파일 전달 오류 발생");
 		}
 		
 		//DB 저장
-		String savePath = "D://CE//98.data//" + DIR_NAME;
+		String savePath = "/home/ubuntu/s3_data" + DIR_NAME;
 		String attachmentOriginalFileName = file.getOriginalFilename();
 		UUID uuid = UUID.randomUUID();
 		String attachmentFileName = uuid.toString() + "_" + file.getOriginalFilename();
